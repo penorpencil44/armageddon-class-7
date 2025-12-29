@@ -145,11 +145,80 @@ Students must explicitly state:
   “System state preserved for recovery.”
 
 
+RUNBOOK SECTION 5 — Recovery
+Recovery Paths (Depends on Root Cause)
+    If Credential Drift
+        Update RDS password to match Secrets Manager
+        OR
+        Update Secrets Manager to known-good value
+
+    If Network Block
+        Restore EC2 security group access to RDS on 3306
+
+    If DB Stopped
+        Start RDS and wait for available
+
+Verify Recovery
+    curl http://<EC2_PUBLIC_IP>/list
+
+Expected:
+    Application returns data
+    No errors
+
+RUNBOOK SECTION 6 — Post-Incident Validation
+6.1 Confirm Alarm Clears
+    aws cloudwatch describe-alarms \
+  --alarm-name lab-db-connection-failure \
+  --query "MetricAlarms[].StateValue"
+
+Expected:
+    OK
+
+6.2 Confirm Logs Normalize
+    aws logs filter-log-events \
+  --log-group-name /aws/ec2/lab-rds-app \
+  --filter-pattern "ERROR"
+
+Expected:
+    No new errors
 
 
+PART V — Grading Rubric (100 Points)
+| Category                       | Points |
+| ------------------------------ | ------ |
+| Alarm acknowledged via CLI     | 10     |
+| Correct failure classification | 20     |
+| Logs used correctly            | 15     |
+| Parameter Store validated      | 10     |
+| Secrets Manager validated      | 10     |
+| Correct recovery action        | 20     |
+| No redeploy / no guesswork     | 10     |
+| Clear incident summary         | 5      |
 
-  
+PART VI — Required Incident Report (Short)
+Students must submit:
+    Incident Summary
+    What failed?
+    How was it detected?
+    Root cause
+    Time to recovery
 
+Preventive Action
+    One improvement to reduce MTTR
+    One improvement to prevent recurrence
+
+PART VII — What This Actually Teaches
+By completing this lab, students demonstrate:
+    On-call discipline
+    Root cause analysis
+    Cloud-native recovery
+    Proper secret handling
+    Operational maturity
+
+This is exactly what separates:
+    “I passed an AWS cert”
+    from
+    “I can be trusted with production.”
 
 
 
