@@ -95,9 +95,9 @@ Students must follow this order. Deviations lose points.
 RUNBOOK SECTION 1 — Acknowledge
 1.1 Confirm Alert
 
-  aws cloudwatch describe-alarms \
+> aws cloudwatch describe-alarms \
   --alarm-name lab-db-connection-failure \
-  --query "MetricAlarms[].StateValue"
+  --query "MetricAlarms[].StateValue" 
 
 Expected:
   ALARM
