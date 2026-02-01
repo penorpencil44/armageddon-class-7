@@ -173,7 +173,7 @@ RUNBOOK SECTION 6 — Post-Incident Validation
 6.1 Confirm Alarm Clears
 
     aws cloudwatch describe-alarms \
-      --alarm-name lab-db-connection-failure \
+      --alarm-name armageddon-class7-db-connection-failure \
       --query "MetricAlarms[].StateValue"
 
 Expected:
