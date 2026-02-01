@@ -107,7 +107,7 @@ RUNBOOK SECTION 2 — Observe
 2.1 Check Application Logs
 
       aws logs filter-log-events \
-      --log-group-name /aws/ec2/lab-rds-app \
+      --log-group-name /aws/ec2/armageddon-class7-rds-app \
       --filter-pattern "ERROR"
 
 Expected:
@@ -133,7 +133,7 @@ Expected:
 3.2 Retrieve Secrets Manager Values
 
       aws secretsmanager get-secret-value \
-      --secret-id lab/rds/mysql
+      --secret-id dakid/lab/rds/mysql
 
 Expected:
   Username/password visible
