@@ -182,7 +182,7 @@ Expected:
 6.2 Confirm Logs Normalize
 
     aws logs filter-log-events \
-      --log-group-name /aws/ec2/lab-rds-app \
+      --log-group-name /aws/ec2/armageddon-class7-rds-app \
       --filter-pattern "ERROR"
 
 Expected:
