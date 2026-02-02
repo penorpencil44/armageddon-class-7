@@ -145,10 +145,10 @@ Expected:
   JSON output
   Fields:
   
-    - username 
-    - password 
     - host 
+    - password 
     - port
+    - username 
 
 7.3 Verify EC2 Can Read Both Systems
 From EC2:
