@@ -72,15 +72,18 @@ AWS Systems Manager Parameter Store
 
 AWS Secrets Manager
   Best for:
+    
     - Credentials
     - Passwords
     - Rotating secrets
 
   Supports:
+    
     - Automatic rotation
     - Tight audit integration
 
   Often used for:
+    
     - Database passwords
     - API keys
 
