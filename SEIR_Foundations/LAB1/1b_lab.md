@@ -132,6 +132,7 @@ C. Incident Response Proof
       --with-decryption
 
 Expected:
+
   - Parameter names returned
   - Correct DB endpoint and port
 
