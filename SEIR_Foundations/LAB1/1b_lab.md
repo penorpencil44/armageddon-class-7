@@ -5,12 +5,12 @@ Prerequisite: Lab 1a completed and verified
 In Lab 1a, you built a working system.
 In Lab 1b, you will operate, observe, break, and recover that system.
 You will extend your EC2 → RDS application to include:
-  Dual secret storage
-    AWS Systems Manager Parameter Store
-    AWS Secrets Manager
-  Centralized logging via CloudWatch Logs
-  Automated alarms when database connectivity fails
-  Incident-response actions using previously saved values
+  - Dual secret storage
+    - AWS Systems Manager Parameter Store
+    - AWS Secrets Manager
+  - Centralized logging via CloudWatch Logs
+  - Automated alarms when database connectivity fails
+  - Incident-response actions using previously saved values
 
 This lab simulates what happens after deployment, which is where most real cloud work lives.
 
