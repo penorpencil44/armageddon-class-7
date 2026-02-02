@@ -163,7 +163,7 @@ Expected:
 7.4 Verify CloudWatch Log Group Exists
     
     aws logs describe-log-groups \
-      --log-group-name-prefix /aws/ec2/lab-rds-app
+      --log-group-name-prefix /aws/ec2/armageddon-class7-rds-app
 
 Expected:
   Log group present
