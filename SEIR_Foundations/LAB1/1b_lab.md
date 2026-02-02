@@ -143,7 +143,8 @@ Expected:
 
 Expected:
   JSON output
-  Fields: 
+  Fields:
+  
     - username 
     - password 
     - host 
@@ -169,6 +170,7 @@ Expected:
 
 7.5 Verify DB Failure Logs Appear
 Simulate failure (examples):
+
   - Stop RDS
   - Change DB password in Secrets Manager without updating DB
   - Block SG temporarily
