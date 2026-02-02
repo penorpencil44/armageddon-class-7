@@ -102,25 +102,25 @@ This is operations engineering, not app development.
 6. Expected Deliverables (What You Must Produce)
 A. Configuration Artifacts
   Parameter Store entries for:
-    DB endpoint
-    DB port
-    DB name
+    - DB endpoint
+    - DB port
+    - DB name
 
   Secrets Manager secret for:
-    DB username/password
+    - DB username/password
 
 B. Observability
-  Application logs visible in CloudWatch Logs
-  Explicit log entries on DB connection failure
-  CloudWatch Alarm configured on error count
+  - Application logs visible in CloudWatch Logs
+  - Explicit log entries on DB connection failure
+  - CloudWatch Alarm configured on error count
 
 C. Incident Response Proof
-  Evidence of a simulated failure
-  Evidence of alarm triggering
-  Evidence of successful recovery using stored values
+  - Evidence of a simulated failure
+  - Evidence of alarm triggering
+  - Evidence of successful recovery using stored values
 
 7. Technical Verification Using AWS CLI (Required)
-You must verify everything via CLI — not screenshots alone. What? You think this is easy?
+  -You must verify everything via CLI — not screenshots alone. What? You think this is easy?
 
 7.1 Verify Parameter Store Values
 
@@ -129,8 +129,8 @@ You must verify everything via CLI — not screenshots alone. What? You think th
       --with-decryption
 
 Expected:
-  Parameter names returned
-  Correct DB endpoint and port
+  - Parameter names returned
+  - Correct DB endpoint and port
 
   7.2 Verify Secrets Manager Value
   
@@ -140,10 +140,10 @@ Expected:
 Expected:
   JSON output
   Fields: 
-    username 
-    password 
-    host 
-    port
+    - username 
+    - password 
+    - host 
+    - port
 
 7.3 Verify EC2 Can Read Both Systems
 From EC2:
@@ -165,9 +165,9 @@ Expected:
 
 7.5 Verify DB Failure Logs Appear
 Simulate failure (examples):
-  Stop RDS
-  Change DB password in Secrets Manager without updating DB
-  Block SG temporarily
+  - Stop RDS
+  - Change DB password in Secrets Manager without updating DB
+  - Block SG temporarily
 
 Then check logs:
 
@@ -184,8 +184,8 @@ Expected:
       --alarm-name-prefix lab-db-connection
 
 Expected:
-  Alarm present
-  State transitions to ALARM during failure
+  - Alarm present
+  - State transitions to ALARM during failure
 
 7.7 Incident Recovery Verification
 After restoring correct credentials or connectivity:
@@ -207,6 +207,7 @@ During recovery, you must:
 This mirrors real on-call workflows.
 
 9. Common Failure Modes (And Why They Matter)
+   
 | Failure                    | Real-World Meaning        |
 | -------------------------- | ------------------------- |
 | Alarm never fires          | Poor observability        |
@@ -216,6 +217,7 @@ This mirrors real on-call workflows.
 
 10. What Completing Lab 1b Proves
 If you complete this lab, you can confidently say:
+  
   “I can operate, monitor, and recover AWS workloads using proper secret management and observability.”
 
 That is mid-level engineer capability, not entry-level.
