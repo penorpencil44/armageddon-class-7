@@ -138,7 +138,7 @@ Expected:
   7.2 Verify Secrets Manager Value
   
       aws secretsmanager get-secret-value \
-      --secret-id lab/rds/mysql
+      --secret-id dakid/lab/rds/mysql
 
 Expected:
   JSON output
