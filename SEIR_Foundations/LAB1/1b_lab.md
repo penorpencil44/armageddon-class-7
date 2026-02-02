@@ -154,7 +154,7 @@ Expected:
 From EC2:
 
     aws ssm get-parameter --name /lab/db/endpoint
-    aws secretsmanager get-secret-value --secret-id lab/rds/mysql
+    aws secretsmanager get-secret-value --secret-id dakid/lab/rds/mysql
 
 Expected:
   Both commands succeed
@@ -178,7 +178,7 @@ Simulate failure (examples):
 Then check logs:
 
     aws logs filter-log-events \
-      --log-group-name /aws/ec2/lab-rds-app \
+      --log-group-name /aws/ec2/armageddon-class7-rds-app \
       --filter-pattern "ERROR"
 
 Expected:
