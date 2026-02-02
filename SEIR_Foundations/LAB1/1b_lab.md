@@ -16,16 +16,18 @@ This lab simulates what happens after deployment, which is where most real cloud
 
 2. Why This Lab Exists (Real-World Context)
 Most cloud failures are not caused by:
-  Bad code
-  Missing features
-  Wrong instance sizes
+ 
+  - Bad code
+  - Missing features
+  - Wrong instance sizes
 
 They are caused by:
-  Credential issues
-  Secret rotation failures
-  Misconfigured access
-  Silent connectivity loss
-  Poor observability
+
+  - Credential issues
+  - Secret rotation failures
+  - Misconfigured access
+  - Silent connectivity loss
+  - Poor observability
 
 This lab teaches you how to design for failure, detect it early, and recover using stored configuration data.
 
