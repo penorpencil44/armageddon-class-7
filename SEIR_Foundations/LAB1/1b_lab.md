@@ -223,6 +223,7 @@ If you complete this lab, you can confidently say:
 That is mid-level engineer capability, not entry-level.
 
 11. Reflection Questions: Answer all of these
+  
   A) Why might Parameter Store still exist alongside Secrets Manager?
   B) What breaks first during secret rotation?
   C) Why should alarms be based on symptoms instead of causes?  
