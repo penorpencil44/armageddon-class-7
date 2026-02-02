@@ -35,48 +35,54 @@ This lab teaches you how to design for failure, detect it early, and recover usi
 3. Workforce Relevance (Why Employers Care)
 This Lab Maps Directly to Job Responsibilities
 In the workforce, you will be expected to:
-  Know where secrets live
-  Understand why multiple secret systems exist
-  Diagnose outages using logs and metrics
-  Respond to incidents without redeploying everything
-  Restore service quickly using known-good configuration
+
+Know where secrets live
+  - Understand why multiple secret systems exist
+  - Diagnose outages using logs and metrics
+  - Respond to incidents without redeploying everything
+  - Restore service quickly using known-good configuration
 
 This is the difference between:
-  “I can deploy AWS resources”
+  
+  - “I can deploy AWS resources”
   and
-  “I can keep systems running under pressure”
+  - “I can keep systems running under pressure”
 
 
 4. Parameter Store vs Secrets Manager (Conceptual)
 You will store database connection values in both systems and intentionally use them during recovery.
 AWS Systems Manager Parameter Store
+
   Best for:
-    Configuration values
-    Non-rotating data
-    Shared application parameters
+    
+    - Configuration values
+    - Non-rotating data
+    - Shared application parameters
 
   Supports:
-    Plain text
-    SecureString (encrypted)
+  
+    - Plain text
+    - SecureString (encrypted)
     
   Often used for:
-    Feature flags
-    Endpoints
-    Environment configuration
+  
+    - Feature flags
+    - Endpoints
+    - Environment configuration
 
 AWS Secrets Manager
   Best for:
-    Credentials
-    Passwords
-    Rotating secrets
+    - Credentials
+    - Passwords
+    - Rotating secrets
 
   Supports:
-    Automatic rotation
-    Tight audit integration
+    - Automatic rotation
+    - Tight audit integration
 
   Often used for:
-    Database passwords
-    API keys
+    - Database passwords
+    - API keys
 
 Industry Reality:
 Many environments use both — intentionally.
